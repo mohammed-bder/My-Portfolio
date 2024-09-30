@@ -1,0 +1,108 @@
+﻿@model List<Project>
+@{
+    ViewData["Title"] = "Remove Project";
+}
+
+<div class="custom-form-container">
+    <form asp-action="Delete" method="post" class="custom-card">
+        <h2 class="text-center mb-4">Remove a Project</h2> 
+
+        <div class="form-group text-center">
+            <label for="Name" class="form-label">Select Project to Remove</label>
+            <select name="Name" class="custom-form-control mx-auto">
+
+                <option value="" disabled selected>-- Select a project --</option>
+                @foreach (var project in Model)
+                {
+                    <option value="@project.Name">@project.Name</option>
+                }
+            </select>
+        </div>
+
+        <div class="button-group text-center mt-4">
+            <button type="submit" class="btn custom-btn-danger">Remove Project</button>
+        </div>
+
+        <div class="text-center mt-3">
+            <a asp-action="Index" class="btn custom-btn-secondary">Back to List</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    /* Center the container */
+    .custom-form-container {
+        min-height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f7f9fc; /* Light background for contrast */
+    }
+
+    .custom-card {
+        width: 100%;
+        max-width: 500px; /* Maximum width for the card */
+        background-color: #ffffff; /* White background for the card */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        padding: 25px; /* Padding inside the card */
+    }
+
+    h2 {
+        font-family: 'Arial', sans-serif; /* Added font style */
+        font-weight: 600; /* Bold title */
+        color: #333; /* Darker color for better contrast */
+    }
+
+    .form-group {
+        margin-bottom: 20px; /* Space between elements */
+    }
+
+    .custom-form-control {
+        border-radius: 8px; /* Rounded corners for inputs */
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow */
+        border: 2px solid #ccc; /* Neutral border color */
+        width: 80%; /* Width for better appearance */
+        padding: 10px; /* Padding inside the select */
+        transition: border-color 0.3s; /* Smooth border transition */
+    }
+
+        .custom-form-control:focus {
+            border-color: #007bff; /* Blue border color on focus */
+            outline: none; /* Remove default outline */
+        }
+
+    .btn {
+        border-radius: 8px; /* Rounded corners for buttons */
+        padding: 10px 20px; /* Padding for buttons */
+        font-weight: bold; /* Bold text */
+        text-transform: uppercase; /* Uppercase text */
+    }
+
+    .custom-btn-danger {
+        background-color: #dc3545; /* Red background for danger */
+        border: none; /* Remove border */
+        color: white; /* White text color */
+    }
+
+        .custom-btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+
+    .custom-btn-secondary {
+        background-color: #6c757d; /* Gray background for secondary */
+        color: white; /* White text color */
+    }
+
+        .custom-btn-secondary:hover {
+            background-color: #5a6268; /* Darker gray on hover */
+        }
+
+    /* Center buttons in the button group */
+    .button-group {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Add some space above the button */
+    }
+
+</style>

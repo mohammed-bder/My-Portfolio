@@ -1,0 +1,114 @@
+﻿@model Project
+
+@{
+    ViewData["Title"] = "Add";
+}
+<div class="d-flex justify-content-center align-items-center custom-form-container">
+    <div class="custom-card">
+        <h4 class="text-center">Add Project</h4>
+        <hr />
+        <!-- Ensure the form has the enctype attribute for file uploads -->
+        <form asp-action="SaveAdd" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control custom-form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control custom-form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="MoreDetailsUrl" class="control-label"></label>
+                <input asp-for="MoreDetailsUrl" class="form-control custom-form-control" />
+                <span asp-validation-for="MoreDetailsUrl" class="text-danger"></span>
+            </div>
+
+            <!-- File upload for image -->
+            <div class="form-group mb-3">
+                <label asp-for="SrcImage" class="control-label">Upload Image</label>
+                <input type="file" name="SrcImage" class="form-control custom-form-control" />
+                <span asp-validation-for="SrcImage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="Create" class="btn custom-btn-primary btn-lg" />
+            </div>
+        </form>
+        <div class="text-center mt-3">
+            <a asp-action="Index" class="btn custom-btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    /* Center the form container */
+    .custom-form-container {
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f7f9fc;
+    }
+
+    .custom-card {
+        width: 100%;
+        max-width: 500px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        /* transition removed */
+    }
+
+    .custom-form-control {
+        border-radius: 8px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-btn-primary {
+        background-color: #3a6cf4;
+        border: none;
+        color: white;
+    }
+
+        .custom-btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .custom-btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+        .custom-btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    /* Typography enhancements */
+    h1, h4 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    label {
+        font-weight: 500;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .p-4 {
+        padding: 1.5rem;
+    }
+</style>

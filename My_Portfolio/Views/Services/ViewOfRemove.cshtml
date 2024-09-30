@@ -1,0 +1,81 @@
+﻿@model string
+
+<h2 class="text-center">Remove a Service</h2>
+
+<div class="custom-form-container">
+    <div class="custom-card shadow-lg p-4">
+        <h4 class="text-center">Remove Service</h4>
+        <form asp-action="Delete" method="post">
+            <div class="form-group">
+                <label for="Title">Service Title</label>
+                <input type="text" name="Title" class="form-control custom-form-control" placeholder="Enter the service title" required />
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn custom-btn-danger">Remove Service</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-3">
+            <a asp-action="Index" class="btn custom-btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Center the container */
+    .custom-form-container {
+        min-height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f7f9fc; /* Light background for contrast */
+    }
+
+    .custom-card {
+        width: 100%;
+        max-width: 500px; /* Maximum width for the card */
+        background-color: #ffffff; /* White background for the card */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        padding: 25px; /* Padding inside the card */
+    }
+
+    .custom-form-control {
+        border-radius: 8px; /* Rounded corners for inputs */
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow */
+        border: 2px solid #ccc; /* Neutral border color */
+    }
+
+        .custom-form-control:focus {
+            border-color: #007bff; /* Blue border color on focus */
+            box-shadow: none; /* No glow effect */
+            outline: none; /* Remove default outline */
+        }
+
+    .btn {
+        border-radius: 8px; /* Rounded corners for buttons */
+        padding: 10px 20px; /* Padding for buttons */
+        font-weight: bold; /* Bold text */
+        text-transform: uppercase; /* Uppercase text */
+    }
+
+    .custom-btn-danger {
+        background-color: #dc3545; /* Red background for danger */
+        border: none; /* Remove border */
+        color: white; /* White text color */
+    }
+
+        .custom-btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+
+    .custom-btn-secondary {
+        background-color: #6c757d; /* Gray background for secondary */
+        color: white; /* White text color */
+    }
+
+        .custom-btn-secondary:hover {
+            background-color: #5a6268; /* Darker gray on hover */
+        }
+</style>

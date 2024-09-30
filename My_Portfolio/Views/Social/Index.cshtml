@@ -1,0 +1,19 @@
+﻿@using MyPortfolio.Models
+@model Social
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="main">
+    <div>
+        <h2>@Model.Description<br><span>@Model.JobTitle</span></h2>
+        <h3>@Model.Skills</h3>
+        <a asp-controller="Project" asp-action="Index" class="main-btn">View My Work</a>
+        <div class="social-icons">
+            <a href=@Model.Facebook><i class="fa-brands fa-facebook"></i></a>
+            <a href=@Model.LinkedIn><i class="fa-brands fa-linkedin"></i></a>
+            <a href=@Model.GitHub><i class="fa-brands fa-github"></i></a>
+            <a href=@Model.Email><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </div>
+</section>

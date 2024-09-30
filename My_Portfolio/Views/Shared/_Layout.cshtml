@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/My_Portfolio.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    @* Header *@
+    <header>
+        <a href="#Logo" class="logo">Mohammed</a>
+        <nav class="navigation">
+            <a asp-controller="Social" asp-action="index">Home</a>
+            <a asp-controller="Services" asp-action="index">Services</a>
+            <a asp-controller="Project" asp-action="index">Projects</a>
+            <a asp-controller="Contact" asp-action="index">Contact</a>
+            <a asp-controller="Resume" asp-action="index">Resume</a>
+        </nav>
+    </header>
+
+    <div class="container-body">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* Footer *@
+    <div style="text-align: center; padding: 10px 0; color: #fff; background-color: #3a6cf4; position: fixed; bottom: 0; width: 100%;">
+        <p style="margin: 0;">Copyright &copy; reserved for Mohammed Hassan @DateTime.Now.Year</p>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
