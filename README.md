@@ -84,6 +84,14 @@ The **Inventory Management System (IMS)** is a comprehensive web-based applicati
     * **Order Management**: Facilitates placing orders with suppliers when stock levels are low, helping to maintain product availability.
     * **Performance Tracking**: Monitors supplier performance based on delivery times, product quality, and reliability, aiding in informed decision-making.
     * **Error Handling**: Validates supplier data entries to ensure accuracy and notify users of potential issues.
+    * 
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run deploy
+```
 
 ## 🧑‍💻Authors
 
